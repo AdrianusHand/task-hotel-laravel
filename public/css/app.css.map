@@ -1,0 +1,1 @@
+{"version":3,"sources":["/resources/assets/sass/app.scss"],"names":[],"mappings":"AAEA;EACE,iCAAiC;EACjC,YAAY,EACb","file":"app.css","sourcesContent":["// @import \"bootstrap/bootstrap\";\n\nbody {\n  font: 100% Helvetica, sans-serif;\n  color: #333;\n}"]}
