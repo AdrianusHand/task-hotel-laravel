@@ -83,14 +83,39 @@
     <section id="portfolio" class="bg-light-gray">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
+                <div class="col-lg-6 text-center">
                     <h2 class="section-heading">List Hotel</h2>
                     <h3 class="section-subheading text-muted"></h3>
                 </div>
             </div>
             
+            <div class="row">
+                <div class="col-md-12">
+                    <form role="form" action="{{route('insert')}}" method="post">
+<br>
+<div class="form-group">Nama Hotel<input class="form-control" type="text" name="hotel_name" value="">
+</div>
+<br>
+<div class="form-group">Email Hotel<input class="form-control" type="text" name="hotel_email" value="">
+</div>
+<br>
+<div class="form-group">ALamat Hotel<input class="form-control" type="text" name="hotel_address" value="">
+</div>
+<br>
+<div class="form-group">Kota<input class="form-control" type="text" name="hotel_city" value="">
+</div>
+<br>
+<div class="form-group"><input type="hidden" name="_token" value="{{Session::token()}}">
+</div>
+<div class="form-group"><input type="submit" class="btn btn-success" value="Submit">
+</div> 
+</form>
+                </div>
+            </div>
 
             <div class="row">
+                       
+            <br>
             @foreach($hotel as $items)
             
                 <div class="col-md-4 col-sm-6 portfolio-item">
@@ -563,3 +588,4 @@
 </body>
 
 </html>
+        
