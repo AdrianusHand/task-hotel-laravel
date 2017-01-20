@@ -6,10 +6,10 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class InsertController extends Controller
+class fullcalenderController extends Controller
 {
     //
-    public request insert(Requests $request){
-    	
+    public function(){
+    	return view('fullcalender');
     }
 }

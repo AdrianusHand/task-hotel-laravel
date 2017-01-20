@@ -41,6 +41,35 @@ class HotelsTableSeeder extends Seeder
 		      'hotel_city'  	=> 'Malang'
     		],        
         ]);
+        \App\fullcalender::insert([
+    		[
+    		'Nama_Event'	=> 'Beli Cilok',
+    		'Tanggal'		=> '2017-01-05',
+    		'Keterangan'	=> 'Kebiasaan sehari-hari'
+    		],
+    		[
+
+        		'Nama_Event'	=> 'Car Free Day',
+    		'Tanggal'		=> '2017-01-08',
+    		'Keterangan'	=> 'Ketemu gebetan'
+    		],
+    		[
+    		'Nama_Event'	=> 'Machung Festival',
+    		'Tanggal'		=> '2017-01-15',
+    		'Keterangan'	=> 'Di terima di Universitas tercinta'
+    		],
+    		[
+    		'Nama_Event'	=> 'Color Run',
+    		'Tanggal'		=> '2017-01-21',
+    		'Keterangan'	=> 'Menjaga kebugaran badan'
+    		],
+    		[
+    		'Nama_Event'	=> 'Fitnes',
+    		'Tanggal'		=> '2017-01-22',
+    		'Keterangan'	=> 'Olah raga'
+    		]
+    		]);
 
     }
+    	
 }

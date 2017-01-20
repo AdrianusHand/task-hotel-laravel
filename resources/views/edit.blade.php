@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -91,24 +91,30 @@
             
             <div class="row">
                 <div class="col-md-12">
+                @foreach($hotel as $item)
+
+                
                     <form role="form" action="{{route('insert')}}" method="post">
+                
+                    
 <br>
-<div class="form-group">Nama Hotel<input class="form-control" type="text" name="hotel_name" value="">
+<div class="form-group">Nama Hotel<input class="form-control" type="text" name="hotel_name" value="{{ $item->hotel_name }}">
 </div>
 <br>
-<div class="form-group">Email Hotel<input class="form-control" type="text" name="hotel_email" value="">
+<div class="form-group">Email Hotel<input class="form-control" type="text" name="hotel_email" value="{{ $item->hotel_email }}">
 </div>
 <br>
-<div class="form-group">ALamat Hotel<input class="form-control" type="text" name="hotel_address" value="">
+<div class="form-group">ALamat Hotel<input class="form-control" type="text" name="hotel_address" value="{{ $item->hotel_address }}">
 </div>
 <br>
-<div class="form-group">Kota<input class="form-control" type="text" name="hotel_city" value="">
+<div class="form-group">Kota<input class="form-control" type="text" name="hotel_city" value="{{ $item->hotel_city }}">
 </div>
 <br>
 <div class="form-group"><input type="hidden" name="_token" value="{{Session::token()}}">
 </div>
 <div class="form-group"><input type="submit" class="btn btn-success" value="Submit">
 </div> 
+@endforeach
 </form>
                 </div>
             </div>
@@ -116,28 +122,6 @@
             <div class="row">
                        
             <br>
-            @foreach($hotel as $items)
-            
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/1.jpg" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>{{ $items['hotel_name'] }}</h4>
-                        <p class="text-muted">{{ $items['hotel_email'] }}</p>
-                        <p class="text-muted">{{ $items['hotel_address'] }}</p>
-                        <p class="text-muted">{{ $items['hotel_city'] }}</p>
-                    </div>
-                    <a href="{{ route('edit', ['id' => $items['id'] ]) }}" type="button" class="btn btn-primary">Edit</a>
-                </div>
-            
-            @endforeach
             </div>
                 
         
@@ -591,3 +575,20 @@
 
 </html>
         
+<html>
+<body>
+<form action="{{route('insert')}}" method="post">
+<br>
+Nama Hotel<input type="text" name="hotel_name" value="">
+<br>
+Email Hotel<input type="text" name="hotel_email" value="">
+<br>
+ALamat Hotel<input type="text" name="hotel_address" value="">
+<br>
+Kota<input type="text" name="hotel_city" value="">
+<br>
+<input type="hidden" name="_token" value="{{Session::token()}}">
+<input type="submit" value="Submit">
+</form>
+</body>
+</html>

@@ -30,3 +30,15 @@ Route::get('insert', function(){
 
 Route::post('insert','hotelController@insertHotel')->name('insert');
 
+Route::group(['prefix' => 'edit'], function(){
+	Route::get('{id}', [
+		'uses' => 'hotelController@findEditHotel',
+		'as' => 'edit'
+	]);
+});
+
+Route::get('calender','fullcalenderController@calender');
+
+Route::get('tiktail', function(){
+	return view('tiktail');
+});

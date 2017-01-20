@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Hotels;
+use Illuminate\Support\Facades\DB;
 
 class hotelController extends Controller
 {
@@ -26,5 +27,14 @@ class hotelController extends Controller
 		$hotel->hotel_city=$request['hotel_city'];
 		$hotel->save();
 		return 1;
+	}
+	public function editHotel(Request $request){
+		
+	}
+	public function findEditHotel($id){
+		$hotel = DB::table('hotel')->where('id', $id)->get();
+		return view('edit', [
+			'hotel'=> $hotel
+		]);
 	}
 }
